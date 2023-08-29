@@ -1,0 +1,57 @@
+# Simples fluxo de trabalho para implantar conteúdo estático no GitHub Pages
+name: Implantar no GitHub Pages
+
+on:
+  # Roda em pushes no branch padrão
+  push:
+    branches: ['main']
+
+  # Permite que você rode este fluxo de trabalho manualmente da aba Actions
+  workflow_dispatch:
+
+# Define as permissões do GITHUB_TOKEN para permitir a implantação no GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Permite uma implantação concorrente
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
+jobs:
+  # Único job de implantação, já que estamos apenas implantando
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Configurar Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Construir
+        run: npm run build
+
+      - name: Configurar Pages
+        uses: actions/configure-pages@v3
+
+      - name: Enviar artefato
+        uses: actions/upload-pages-artifact@v1
+        with:
+          # Envia a pasta dist para o repositório
+          path: './dist'
+
+      - name: Implantar no GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1

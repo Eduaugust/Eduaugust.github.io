@@ -47,10 +47,10 @@ function Navbar() {
         </a>
       </div>
 
-      <a href="https://www.linkedin.com/in/eduardo-evangelista/" target="_blank" className="icons">
+      <a href="https://www.linkedin.com/in/eduardo-evangelista/" target="_blank" className="icons" rel="noreferrer">
         <FontAwesomeIcon icon={faLinkedin} size="2x" />
       </a>
-      <a href="https://github.com/Eduaugust" target="_blank" className="icons">
+      <a href="https://github.com/Eduaugust" target="_blank" className="icons" rel="noreferrer">
         <FontAwesomeIcon icon={faGithub} size="2x" />
       </a>
 
