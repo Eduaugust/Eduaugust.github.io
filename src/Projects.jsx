@@ -70,7 +70,7 @@ function Projects() {
         />
 
         <ProjectCard
-          title="Ninja game with python and graphics"
+          title="Flutter Finance: A Personal Finance App Built with Flutter and Firebase"
           imageSrc={finance}
           githubLink="https://github.com/Eduaugust/finance_app"
           technologies="Flutter and Firebase"
