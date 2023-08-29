@@ -1,6 +1,4 @@
-# [Your Portfolio Project Name]
-
-[One-liner description of your project]
+# [My Portfolio]
 
 ## Table of Contents
 - [Introduction](#introduction)
