@@ -6,6 +6,7 @@ import drone from './Images/drone.gif';
 import ganapp from './Images/ganapp.gif';
 import ninja from './Images/ninja.gif';
 import finance from './Images/finance.png';
+import vision from './Images/vision.gif';
 
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -46,6 +47,7 @@ function Projects() {
         My Projects <span style={{ color: '#FF004F' }}>.</span>{' '}
       </h1>
       <div className='projects-wrapper'>
+      
       <ProjectCard
           title="Autonomus drone simulation in ROS"
           imageSrc={drone}
@@ -54,6 +56,13 @@ function Projects() {
           description="This is a little of my work on FBOT, the team of robotics in FURG (University of Rio Grande), i'm simulating a autonomus drone to pass in tests."
         />
 
+        <ProjectCard
+          title="ICT in Competitive Petrobras Project"
+          imageSrc={vision}
+          githubLink=""
+          technologies="Python, Computer Vision"
+          description="This is my work on a Competitive Petrobras Project. I work with computer vision, i test a lot of neural networks with a specific propose."
+        />
         <ProjectCard
           title="Pokémon fire red with python and graphics"
           imageSrc={pokemon}
