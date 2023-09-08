@@ -2,6 +2,7 @@ import './CSS Files/projects.css';
 
 import encaixe from './Images/encaixe.jpg';
 import pokemon from './Images/pokemon.gif';
+import drone from './Images/drone.gif';
 import ganapp from './Images/ganapp.gif';
 import ninja from './Images/ninja.gif';
 import finance from './Images/finance.png';
@@ -45,6 +46,14 @@ function Projects() {
         My Projects <span style={{ color: '#FF004F' }}>.</span>{' '}
       </h1>
       <div className='projects-wrapper'>
+      <ProjectCard
+          title="Autonomus drone simulation in ROS"
+          imageSrc={drone}
+          githubLink="https://github.com/ctu-mrs"
+          technologies="ROS, Python, Docker/Singularity"
+          description="This is a little of my work on FBOT, the team of robotics in FURG (University of Rio Grande), i'm simulating a autonomus drone to pass in tests."
+        />
+
         <ProjectCard
           title="Pokémon fire red with python and graphics"
           imageSrc={pokemon}
